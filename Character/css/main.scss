@@ -1,0 +1,177 @@
+
+body {
+    background: #11C3EF;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.head {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2.35px solid black;
+    background: white;
+    position: relative;
+    justify-content: center;
+    display: flex;
+    align-items: baseline;
+}
+
+.head::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: inset -6.5px 2px 0px 2px rgba(0,0,0,.2);
+}
+
+.head::after {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 10px;
+    background: white;
+    margin-top: 101px;
+    border: 2.35px solid black;
+}
+
+.left, .right {
+    background: black;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.left {
+    margin-left: -51px;
+}
+.right {
+    margin-right: -51px;
+}
+.left::before, .right::before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: inset -6.5px 2px 0px 2px rgba(255,255,255,.2);
+}
+
+.right::after, .left::after {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: white;
+    border-radius: 50%;
+}
+
+.right::after {
+    width: 10px;
+    height: 10px;
+    background: transparent;
+    border: 2px solid white;
+}
+
+.cutout {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: white;
+    border-radius: 50%;
+    align-self: flex-end;
+    margin-bottom: -15px;
+}
+
+.mouth {
+    width: 55px;
+    height: 55px;
+    position: absolute;
+    border: 3px solid black;
+    border-radius: 50%;
+    align-self: center;
+    clip-path: circle(65% at 50% 100%);
+
+    &::before, &::after {
+        position: absolute;
+        content: "";
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: 3px solid black;
+        top: 29px;
+        left: -6px;
+        clip-path: circle(50% at 0 0);
+    }
+    &::after {
+        left: 45px;
+        top: 29px;
+        clip-path: circle(50% at 100% 0);
+    }
+}
+
+.body {
+    position: absolute;
+    height: 25px;
+    width: 50px;
+    background: rgb(127, 158, 55);
+    top: 117px;
+    border: 2.35px solid black;
+    border-radius: 100% 100% 100% 100% / 100% 100% 0% 0% ;
+
+    &::before, &::after {
+        position: absolute;
+        content: "";
+        width: 40px;
+        height: 15px;
+        top: 10px;
+    }
+    &::before {
+        border-right: 2.35px solid black;
+    }
+    &::after {
+        border-left: 2.35px solid black;
+        right: 0;
+    }
+}
+
+.bg {
+    width: 40px;
+    height: 20px;
+    position: absolute;
+    left: -100px;
+    border-radius: 30%;
+    top: -20px;
+    box-shadow: 
+        200px 100px 0 0 rgba(0,0,0,.15),
+        30px 50px 0 0 rgba(0,0,0,.15),
+        230px 30px 0 0 rgba(0,0,0,.15);
+    animation: bgAnim 2s infinite alternate;
+}
+
+@keyframes bgAnim {
+    from {
+        box-shadow: 
+            200px 100px 0 0 rgba(0,0,0,.15),
+            20px 50px 0 0 rgba(0,0,0,.15),
+            240px 30px 0 0 rgba(0,0,0,.15);
+    }
+    to {
+        box-shadow: 
+            250px 100px 0 0 rgba(0,0,0,.15),
+            70px 50px 0 0 rgba(0,0,0,.15),
+            190px 30px 0 0 rgba(0,0,0,.15);
+    }
+}

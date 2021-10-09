@@ -2,4 +2,4 @@
 
 Animated character made purely using CSS.
 
-[Here is the link.](https://tcs-kiran.github.io/Character/Character/)
+[Here is the link.](https://tcskiran.github.io/Character/Character/)
